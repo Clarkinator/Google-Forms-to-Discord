@@ -1,4 +1,4 @@
-var POST_URL = "WEBHOOKURL";
+var POST_URL = "WEBHOOKURL (CHANGE THIS)";
 
 function onSubmit(e) {
   var form = FormApp.getActiveForm();
@@ -10,7 +10,11 @@ function onSubmit(e) {
   for (var i = 0; i < response.length; i++) {
     var question = response[i].getItem().getTitle();
     var answer = response[i].getResponse();
-    var parts = answer.match(/[\s\S]{1,1024}/g) || [];
+    try {
+      var parts = answer.match(/[\s\S]{1,1024}/g) || [];
+    } catch (e) {
+      var parts = answer;
+    }
 
     if (answer == "") {
       continue;
@@ -36,11 +40,8 @@ function onSubmit(e) {
     "method": "post",
     "payload": JSON.stringify({
       "embeds": [{
-        "title": "TOP TEXT CHANGE THIS IN SCRIPT",
+        "title": "HEADING TEXT (CHANGE THIS)",
         "fields": items,
-        "footer": {
-          "text": "BOTTOM TEXT CHANGE THIS IN SCRIPT"
-        }
       }]
     })
   };
