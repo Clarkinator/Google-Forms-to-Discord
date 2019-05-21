@@ -23,4 +23,5 @@
 ![adding trigger](https://i.imgur.com/N7W95m5.png)
 
 **8) Run the script by clicking the Play button!**  This gives the script the proper permissions to access form data.
+
 9) Submit a test response to make sure it works.
