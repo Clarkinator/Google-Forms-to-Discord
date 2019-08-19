@@ -1,4 +1,4 @@
-var POST_URL = "WEBHOOKURL (CHANGE THIS)";
+var POST_URL = "DISCORD WEBHOOK (CHANGE THIS)";
 
 function onSubmit(e) {
   var form = FormApp.getActiveForm();
@@ -40,7 +40,7 @@ function onSubmit(e) {
     "method": "post",
     "payload": JSON.stringify({
       "embeds": [{
-        "title": "HEADING TEXT (CHANGE THIS)",
+        "title": "HEADER (CHANGE THIS)",
         "fields": items,
       }]
     })
